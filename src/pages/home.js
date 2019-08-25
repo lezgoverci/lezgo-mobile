@@ -24,8 +24,12 @@ class Home extends Component{
     return(<View style={styles.container}>
       <View><Text style={styles.text}>{"is logged in: " + this.props.isLoggedIn + ""}</Text></View>
       <View><Text style={styles.text}>{"is logging in: " + this.props.isLoggingIn + ""}</Text></View>
-      <Button onPress={()=>this.props.logoutFacebook()} title="Logout"></Button>
+      <Button onPress={()=>this.logout()} title="Logout"></Button>
     </View>)
+  }
+
+  logout = () =>{
+    this.props.logoutFacebook();
   }
     
   
