@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, ActivityIndicator} from 'react-native';
 import {connect} from 'react-redux';
 import Button from '../components/button';
 
@@ -18,6 +18,7 @@ class Welcome extends Component{
 
   render(){
     return(<View style={styles.container}>
+      <ActivityIndicator size="large" color="black" animating={this.props.isLoggingIn}/>
       <View><Text>{"is logged in: " + this.props.isLoggedIn + ""}</Text></View>
       <View><Text>{"is logging in: " + this.props.isLoggingIn + ""}</Text></View>
       <Button btnColor="#4267b2" text="Login with Facebook"/>
