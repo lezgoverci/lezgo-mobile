@@ -1,5 +1,6 @@
 
 export const FBLOGIN = {
   LOGIN : 'LOGIN',
-  LOGOUT: 'LOGOUT'
+  LOGOUT: 'LOGOUT',
+  LOGGING: 'LOGGING'
 }

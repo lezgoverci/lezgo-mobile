@@ -1,13 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import {connect} from 'react-redux';
-
-
-const FBSDK = require('react-native-fbsdk');
-const {
-  LoginManager,
-} = FBSDK;
-
 import Button from '../components/button';
 
 class Welcome extends Component{
@@ -25,26 +18,12 @@ class Welcome extends Component{
 
   render(){
     return(<View style={styles.container}>
+      <View><Text>{"is logged in: " + this.props.isLoggedIn + ""}</Text></View>
+      <View><Text>{"is logging in: " + this.props.isLoggingIn + ""}</Text></View>
       <Button btnColor="#4267b2" text="Login with Facebook"/>
     </View>)
   }
-    
-
-  // login = () => {
-  //   LoginManager.logInWithPermissions(['public_profile']).then(
-  //     function (result) {
-  //       if (result.isCancelled) {
-  //         alert('Login was cancelled');
-  //       } else {
-  //         alert('Login was successful with permissions: '
-  //           + result.grantedPermissions.toString());
-  //       }
-  //     },
-  //     function (error) {
-  //       alert('Login failed with error: ' + error);
-  //     }
-  //   );
-  // }
+  
   
 }
 
@@ -58,8 +37,10 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => ({
-  isLoggedIn : state.FBlogin.isLoggedIn
+  isLoggedIn : state.FBlogin.isLoggedIn,
+  isLoggingIn: state.FBlogin.isLoggingIn
 });
+
 
 
 export default connect(mapStateToProps)(Welcome);

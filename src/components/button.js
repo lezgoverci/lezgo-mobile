@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { TouchableOpacity, Dimensions, View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {connect} from 'react-redux';
-import {login, logout} from '../actions';
+import {login, logout, logging} from '../actions';
+const FBSDK = require('react-native-fbsdk');
+const {
+  LoginManager,
+} = FBSDK;
 
 class Button extends Component {
   constructor(props) {
@@ -15,7 +19,28 @@ class Button extends Component {
   }
 
   login = () =>{
-    this.props.loginWithFacebook({});
+    
+    let logging = (payload) => this.props.logging(payload);
+    let login = () => this.props.loginWithFacebook();
+    logging(true);
+    LoginManager.logInWithPermissions(['public_profile']).then(
+      function (result) {
+        if (result.isCancelled) {
+          alert('Login was cancelled');
+        } else {
+          alert('Login was successful with permissions: '
+            + result.grantedPermissions.toString());
+            logging(false);
+            login();
+            
+        }
+
+        
+      },
+      function (error) {
+        alert('Login failed with error: ' + error);
+      }
+    );
   }
 
   logout = () =>{
@@ -28,7 +53,7 @@ class Button extends Component {
         <TouchableOpacity style={{...styles.container, backgroundColor: this.state.color}} onPress={() => this.login()} >
           <View style={styles.button}>
             <Icon name="logo-facebook" style={styles.buttonIcon} />
-            <Text style={styles.buttonText}>{this.props.text + " " + this.props.isLoggedIn}</Text>
+            <Text style={styles.buttonText}>{this.props.text}</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -67,7 +92,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps =  {
   loginWithFacebook: (payload) => login(payload),
-  logoutFacebook: () => logout()
+  logoutFacebook: () => logout(),
+  logging: (payload) => logging(payload)
 }
 
 

@@ -22,7 +22,8 @@ class Home extends Component{
 
   render(){
     return(<View style={styles.container}>
-      <View><Text style={styles.text}>{this.props.isLoggedIn + ""}</Text></View>
+      <View><Text style={styles.text}>{"is logged in: " + this.props.isLoggedIn + ""}</Text></View>
+      <View><Text style={styles.text}>{"is logging in: " + this.props.isLoggingIn + ""}</Text></View>
       <Button onPress={()=>this.props.logoutFacebook()} title="Logout"></Button>
     </View>)
   }
@@ -43,11 +44,11 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => ({
-  isLoggedIn : state.FBlogin.isLoggedIn
+  isLoggedIn : state.FBlogin.isLoggedIn,
+  isLoggingIn: state.FBlogin.isLoggingIn
 });
 
 const mapDispatchToProps =  {
-  loginWithFacebook: (payload) => login(payload),
   logoutFacebook: () => logout()
 }
 

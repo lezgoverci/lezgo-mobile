@@ -8,3 +8,7 @@ export function logout(payload) {
   return { type: FBLOGIN.LOGOUT, payload: payload }
 };
 
+export function logging(payload){
+  return {type: FBLOGIN.LOGGING, payload: payload}
+}
+
