@@ -1,5 +1,10 @@
-import {LOGIN} from '../constants/action-types';
+import {FBLOGIN} from '../constants/action-types';
 
 export function login(payload) {
-  return { type: LOGIN, payload: payload }
+  return { type: FBLOGIN.LOGIN, payload: payload }
 };
+
+export function logout(payload) {
+  return { type: FBLOGIN.LOGOUT, payload: payload }
+};
+

@@ -1,4 +1,4 @@
-
+import {FBLOGIN} from '../constants/action-types';
 const initialState = {
   isLoggedIn: false
 };
@@ -6,12 +6,12 @@ const initialState = {
 const FBlogin = (state = initialState, action) => {
 
   switch(action.type){
-    case 'LOGIN' : {
+    case FBLOGIN.LOGIN : {
       let temp = JSON.parse(JSON.stringify(state));
       temp.isLoggedIn = true;
       return temp;
     }
-    case 'LOGOUT' : {
+    case FBLOGIN.LOGOUT: {
       let temp = JSON.parse(JSON.stringify(state));
       temp.isLoggedIn = false;
       return temp;

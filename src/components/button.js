@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TouchableOpacity, Dimensions, View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {connect} from 'react-redux';
-import {login} from '../actions';
+import {login, logout} from '../actions';
 
 class Button extends Component {
   constructor(props) {
@@ -16,6 +16,10 @@ class Button extends Component {
 
   login = () =>{
     this.props.loginWithFacebook({});
+  }
+
+  logout = () =>{
+    this.props.logoutFacebook({});
   }
 
   render() {
@@ -62,7 +66,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps =  {
-  loginWithFacebook: (payload) => login(payload)
+  loginWithFacebook: (payload) => login(payload),
+  logoutFacebook: () => logout()
 }
 
 

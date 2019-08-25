@@ -1,1 +1,5 @@
-export const LOGIN = "LOGIN";
+
+export const FBLOGIN = {
+  LOGIN : 'LOGIN',
+  LOGOUT: 'LOGOUT'
+}
