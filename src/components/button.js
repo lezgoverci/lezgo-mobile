@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Dimensions, View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {connect} from 'react-redux';
+import {login} from '../actions';
 
 class Button extends Component {
   constructor(props) {
@@ -12,13 +14,17 @@ class Button extends Component {
     this.setState({color: this.props.btnColor});
   }
 
+  login = () =>{
+    this.props.loginWithFacebook({});
+  }
+
   render() {
     return (
       <View>
-        <TouchableOpacity style={{...styles.container, backgroundColor: this.state.color}} onPress={() => this.props.callback()} >
+        <TouchableOpacity style={{...styles.container, backgroundColor: this.state.color}} onPress={() => this.login()} >
           <View style={styles.button}>
             <Icon name="logo-facebook" style={styles.buttonIcon} />
-            <Text style={styles.buttonText}>{this.props.text}</Text>
+            <Text style={styles.buttonText}>{this.props.text + " " + this.props.isLoggedIn}</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -51,4 +57,13 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Button;
+const mapStateToProps = (state) => ({
+  isLoggedIn : state.FBlogin.isLoggedIn
+});
+
+const mapDispatchToProps =  {
+  loginWithFacebook: (payload) => login(payload)
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Button);
