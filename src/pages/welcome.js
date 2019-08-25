@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
+import {connect} from 'react-redux';
 
 
 const FBSDK = require('react-native-fbsdk');
@@ -12,6 +13,14 @@ import Button from '../components/button';
 class Welcome extends Component{
   constructor(props){
     super(props);
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if(prevProps.isLoggedIn != this.props.isLoggedIn){
+      if(this.props.isLoggedIn == true){
+        this.props.navigation.navigate('Home');
+      }
+    }
   }
 
   render(){
@@ -48,5 +57,9 @@ const styles = StyleSheet.create({
   }
 });
 
+const mapStateToProps = (state) => ({
+  isLoggedIn : state.FBlogin.isLoggedIn
+});
 
-export default Welcome;
+
+export default connect(mapStateToProps)(Welcome);

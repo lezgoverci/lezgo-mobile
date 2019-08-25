@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {createSwitchNavigator, createStackNavigator, createAppContainer} from 'react-navigation';
 import WelcomeScreen from './src/pages/welcome';
+import HomeScreen from './src/pages/home';
 
 import { Provider } from 'react-redux';
 import store from './src/store';
 
 const SwitchNavigator = createSwitchNavigator({
   Welcome: WelcomeScreen,
+  Home: HomeScreen
 },{
   initialRouteName: 'Welcome'
 });
@@ -20,7 +22,7 @@ class App extends Component{
 
   render(){
     return(
-      <Provider store={store} >
+      <Provider store = {store} >
           <AppNavigator />
       </Provider>
     )
