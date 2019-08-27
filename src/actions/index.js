@@ -12,3 +12,7 @@ export function logging(payload){
   return {type: FBLOGIN.LOGGING, payload: payload}
 }
 
+export function saveData(payload){
+  return {type: FBLOGIN.SAVEDATA, payload: payload}
+}
+

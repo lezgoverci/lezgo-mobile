@@ -1,7 +1,8 @@
 import {FBLOGIN} from '../constants/action-types';
 const initialState = {
   isLoggedIn: false,
-  isLoggingIn: false
+  isLoggingIn: false,
+  fbUserData: null
 };
 
 const FBlogin = (state = initialState, action) => {
@@ -20,6 +21,11 @@ const FBlogin = (state = initialState, action) => {
     case FBLOGIN.LOGGING: {
       let temp = JSON.parse(JSON.stringify(state));
       temp.isLoggingIn = action.payload;
+      return temp;
+    }
+    case FBLOGIN.SAVEDATA :{
+      let temp = JSON.parse(JSON.stringify(state));
+      temp.fbUserData = action.payload;
       return temp;
     }
     default: return state

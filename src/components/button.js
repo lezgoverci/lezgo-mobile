@@ -6,6 +6,7 @@ import {login, logout, logging} from '../actions';
 const FBSDK = require('react-native-fbsdk');
 const {
   LoginManager,
+  AccessToken
 } = FBSDK;
 
 class Button extends Component {
@@ -23,13 +24,18 @@ class Button extends Component {
     let logging = (payload) => this.props.logging(payload);
     let login = () => this.props.loginWithFacebook();
     logging(true);
-    LoginManager.logInWithPermissions(['public_profile']).then(
+    
+    LoginManager.logInWithPermissions(['public_profile,email']).then(
       function (result) {
         if (result.isCancelled) {
-          alert('Login was cancelled');
+          alert('Login was cancelledt' + JSON.stringify(result));
         } else {
-          alert('Login was successful with permissions: '
-            + result.grantedPermissions.toString());
+          
+          AccessToken.getCurrentAccessToken()
+          .then(data =>{
+            alert(JSON.stringify(data));
+          });
+
             logging(false);
             login();
             
