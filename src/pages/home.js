@@ -7,6 +7,12 @@ import {logout} from '../actions';
 
 
 class Home extends Component{
+
+  static navigationOptions = {
+    title: 'Feed',
+  };
+
+
   constructor(props){
     super(props);
   }

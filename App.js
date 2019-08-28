@@ -1,16 +1,23 @@
 import React, {Component} from 'react';
-import {createSwitchNavigator, createStackNavigator, createAppContainer} from 'react-navigation';
+import {createSwitchNavigator, createStackNavigator,createDrawerNavigator, createAppContainer} from 'react-navigation';
 import WelcomeScreen from './src/pages/welcome';
-import HomeScreen from './src/pages/home';
+import FeedScreen from './src/pages/home';
 
 import { Provider } from 'react-redux';
 import store from './src/store';
 
+const AuthDrawerNavigator = createDrawerNavigator({
+  Feed: FeedScreen
+},{
+  drawerPosition: 'right',
+  drawerType:'slide'
+});
+
 const SwitchNavigator = createSwitchNavigator({
   Welcome: WelcomeScreen,
-  Home: HomeScreen
+  Auth: AuthDrawerNavigator
 },{
-  initialRouteName: 'Welcome'
+  initialRouteName: 'Auth'
 });
 
 const AppNavigator = createAppContainer(SwitchNavigator);
