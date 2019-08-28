@@ -19,10 +19,15 @@ class Button extends Component {
     this.setState({color: this.props.btnColor});
   }
 
+  
+
   login = () =>{
     
     let logging = (payload) => this.props.logging(payload);
     let login = () => this.props.loginWithFacebook();
+    let navigate = route =>{
+      this.props.navigation.navigate(route);
+    };
     logging(true);
     
     LoginManager.logInWithPermissions(['public_profile,email']).then(
@@ -33,9 +38,13 @@ class Button extends Component {
           
           AccessToken.getCurrentAccessToken()
           .then(data =>{
-            alert(JSON.stringify(data));
+            //alert(JSON.stringify(data));
+            if(data.accessToken != null){
+              navigate('Auth');
+            }
+            
           });
-
+            
             logging(false);
             login();
             
