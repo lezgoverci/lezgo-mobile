@@ -29,7 +29,7 @@ class Button extends Component {
       this.props.navigation.navigate(route);
     };
     logging(true);
-    
+    LoginManager.logOut();
     LoginManager.logInWithPermissions(['public_profile,email']).then(
       function (result) {
         if (result.isCancelled) {
