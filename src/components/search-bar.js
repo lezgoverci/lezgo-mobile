@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity, TextInput } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import {focusSearch, blurSearch} from '../actions';
+import { connect } from 'react-redux';
 
 
 
@@ -19,7 +21,7 @@ class SearchBar extends Component {
             <View style={styles.searchBar}>
               <View style={styles.searchIcons}>
                 <Ionicons name="md-add" style={styles.icon} />
-                <TextInput placeholder='Search' style={styles.searchBox}></TextInput>
+                <TextInput placeholder='Search' style={styles.searchBox} onBlur={()=> this.props.blurSearch()} onFocus={()=> this.props.focusSearch()}></TextInput>
                 <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
                   <Ionicons name="md-menu" style={styles.icon} />
                 </TouchableOpacity>
@@ -29,7 +31,7 @@ class SearchBar extends Component {
 
         </View>
 
-        <View style={styles.card}>
+        <View style={[styles.card, {display: this.props.isFocused ? 'flex' : 'none'}]}>
           <View style={{ height: 55 }}>
             <View style={styles.filter}>
               <View style={styles.filterIcons}>
@@ -43,7 +45,7 @@ class SearchBar extends Component {
 
         </View>
 
-        <View style={styles.card}>
+        <View style={[styles.card, {display: this.props.isFocused ? 'flex' : 'none'}]}>
           <View style={styles.autoSuggestWrapper}>
           <View style={styles.autoSuggestItems}>
             <Text>Palawan</Text>
@@ -130,4 +132,14 @@ const styles = StyleSheet.create({
   }
 })
 
-export default SearchBar;
+const mapStateToProps = (state) => ({
+  isFocused: state.Search.isFocused,
+});
+
+const mapDispatchToProps = {
+  focusSearch: () => focusSearch(),
+  blurSearch: () => blurSearch()
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

@@ -43,4 +43,11 @@ export const REACTION = {
   WOW: 'WOW'
 }
 
+export const SEARCH = {
+  FOCUS: 'FOCUS',
+  BLUR: 'BLUR',
+  TYPE: 'TYPE',
+  SEARCH: 'SEARCH'
+}
+
 
