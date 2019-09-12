@@ -2,12 +2,14 @@ import React, {Component} from 'react';
 import {createSwitchNavigator, createStackNavigator,createDrawerNavigator, createAppContainer} from 'react-navigation';
 import WelcomeScreen from './src/pages/welcome';
 import FeedScreen from './src/pages/home';
+import InboxScreen from './src/pages/inbox';
 
 import { Provider } from 'react-redux';
 import store from './src/store';
 
 const AuthDrawerNavigator = createDrawerNavigator({
-  Feed: FeedScreen
+  Feed: FeedScreen,
+  Inbox: InboxScreen
 },{
   drawerPosition: 'right',
   drawerType:'slide'
