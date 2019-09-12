@@ -1,4 +1,4 @@
-import {FBLOGIN} from '../constants/action-types';
+import {FBLOGIN, CHAT, CONVERSATION, MEMBERS, MESSAGE, REACTION} from '../constants/action-types';
 
 export function login(payload) {
   return { type: FBLOGIN.LOGIN, payload: payload }
