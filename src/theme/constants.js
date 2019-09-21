@@ -32,7 +32,7 @@ export default Constants = {
   },
   colors:{
     background: '#fff',
-    primary: '#fff',
+    primary: '#14D1D9',
     secondary: '#fff',
   },
   shadow:{
@@ -46,15 +46,17 @@ export default Constants = {
     elevation: 5,
   },
   textColor:{
-    default: '#000',
+    heading: '#626262',
+    default: '#868686',
     active: '#000',
     selected: '#000',
     inactive: '#000',
-    disabled: '#000'
+    disabled: '#000',
+    button: '#fff'
   },
   fontSize:{
-    heading1: 60,
-    heading2: 30,
+    heading1: 30,
+    heading2: 20,
     heading3: 15,
     xl: 16,
     lg: 14,
@@ -63,7 +65,8 @@ export default Constants = {
   },
   icon:{
     size: 28,
-    color:'#000'
+    color:'#000',
+    colorInverted: '#fff'
   },
   fontWeight:{
     bold: 'bold',
@@ -90,4 +93,8 @@ export default Constants = {
     deviceHeight: Dimensions.get('window').height,
     minHeight: 55
   },
+  button:{
+    height: 40,
+    maxWidth:300
+  }
 }

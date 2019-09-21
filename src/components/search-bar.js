@@ -6,8 +6,6 @@ import { focusSearch, blurSearch } from '../actions';
 import { connect } from 'react-redux';
 import Theme from '../theme/style';
 
-
-
 class SearchBar extends Component {
   constructor(props) {
     super(props);

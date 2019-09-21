@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Dimensions, View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Dimensions, View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {connect} from 'react-redux';
 import {login, logout, logging} from '../actions';
+import Theme from '../theme/style';
+
 const FBSDK = require('react-native-fbsdk');
 const {
   LoginManager,
@@ -65,41 +67,16 @@ class Button extends Component {
   render() {
     return (
       <View>
-        <TouchableOpacity style={{...styles.container, backgroundColor: this.state.color}} onPress={() => this.login()} >
-          <View style={styles.button}>
-            <Icon name="logo-facebook" style={styles.buttonIcon} />
-            <Text style={styles.buttonText}>{this.props.text}</Text>
-          </View>
+        <TouchableOpacity style={[Theme.button,{ backgroundColor: this.state.color}]} onPress={() => this.login()} >
+          
+            <Icon name="logo-facebook" style={Theme.buttonIcon} />
+            <Text style={Theme.buttonText}>{this.props.text}</Text>
+         
         </TouchableOpacity>
       </View>
     )
   }
 }
-
-const styles = StyleSheet.create({
-
-  container:{
-    borderRadius: 5,
-  },
-  button: {
-    borderRadius: 5, 
-    height: 40, 
-    flexDirection: 'row', 
-    alignItems: 'center', 
-    justifyContent: 'center', 
-    paddingHorizontal: 15,
-    maxWidth: 300
-  },
-  buttonIcon:{
-    fontSize: 28, 
-    color: '#fff', 
-    paddingRight: 10
-  },
-  buttonText: {
-    color: 'white',
-    fontWeight: '600',
-  }
-});
 
 const mapStateToProps = (state) => ({
   isLoggedIn : state.FBlogin.isLoggedIn

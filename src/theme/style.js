@@ -8,7 +8,14 @@ const Styles = StyleSheet.create({
     justifyContent: Constants.justify.center,
     padding: Constants.padding.md,
     zIndex: Constants.elevation.above,
+    width: Constants.width.fullWidth
 
+  },
+  welcomePage:{
+    flex: Constants.flex.full,
+    alignItems: Constants.align.center,
+    justifyContent: Constants.justify.center,
+    backgroundColor:Constants.colors.primary
   },
   icon: {
     fontSize: Constants.icon.size,
@@ -43,7 +50,8 @@ const Styles = StyleSheet.create({
 
     elevation: Constants.shadow.elevation,
     marginBottom: Constants.margin.bottom,
-    borderRadius: Constants.border.radius
+    borderRadius: Constants.border.radius,
+    padding: Constants.padding.sm
   },
   filter: {
     flex: Constants.flex.full,
@@ -76,18 +84,41 @@ const Styles = StyleSheet.create({
   },
   heading1:{
     fontSize: Constants.fontSize.heading1,
-    color: Constants.textColor.default,
-    fontWeight: Constants.fontWeight.bold
+    color: Constants.textColor.heading,
+    fontWeight: Constants.fontWeight.bold,
+    paddingBottom: Constants.padding.sm
   },
   heading2:{
     fontSize: Constants.fontSize.heading2,
-    color: Constants.textColor.default,
-    fontWeight: Constants.fontWeight.bold
+    color: Constants.textColor.heading,
+    fontWeight: Constants.fontWeight.bold,
+    paddingBottom: Constants.padding.sm
   },
   heading3:{
     fontSize: Constants.fontSize.heading3,
-    color: Constants.textColor.default,
-    fontWeight: Constants.fontWeight.bold
+    color: Constants.textColor.heading,
+    fontWeight: Constants.fontWeight.bold,
+    paddingBottom: Constants.padding.sm
+  },
+  scrollView:{
+    width: Constants.width.fullWidth
+  },
+  button:{
+    borderRadius: Constants.border.radius, 
+    height: Constants.button.height, 
+    flexDirection: Constants.flexDirection.row, 
+    alignItems: Constants.align.center, 
+    justifyContent: Constants.justify.center, 
+    paddingHorizontal:Constants.padding.md,
+    maxWidth: Constants.button.maxWidth
+  },
+  buttonText:{
+    color: Constants.textColor.button
+  },
+  buttonIcon:{
+    fontSize: Constants.icon.size, 
+    color: Constants.icon.colorInverted, 
+    paddingRight: Constants.padding.sm
   }
 })
 

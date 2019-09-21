@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { logout } from '../actions';
 import FeedItem from '../components/feed-item';
 import SearchBar from '../components/search-bar';
+import Theme from '../theme/style';
 
 
 
@@ -31,12 +32,12 @@ class Home extends Component {
     return (
       <ImageBackground source={require('../../resources/profilepic.jpg')} style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }} resizeMode='cover'>
         <SearchBar navigation={this.props.navigation} />
-        <View style={styles.wrapper}>
-        <View style={styles.container}>
+    
+        <View style={Theme.container}>
           <ScrollView
-           style={styles.feed}>
-            <View><Text style={styles.user}>John Doe</Text></View>
-            <View><Text style={styles.sectionTitle}>Upcoming Trips</Text></View>
+           style={Theme.scrollView}>
+            <View><Text style={Theme.heading1}>John Doe</Text></View>
+            <View><Text style={Theme.heading2}>Upcoming Trips</Text></View>
             <FlatList
               data={[
                 { id: 1, 
@@ -93,7 +94,6 @@ class Home extends Component {
             />
           </ScrollView>
         </View>
-        </View>
       </ImageBackground>
     )
   }
@@ -105,39 +105,6 @@ class Home extends Component {
 
 }
 
-const styles = StyleSheet.create({
-  wrapper:{
-   flex:1,
-   justifyContent:'flex-end',
-   zIndex:0
-
-
-  },
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height:Dimensions.get('window').height
-  },
-  feed:{
-    
-  },
-  text: {
-    color: 'black'
-  },
-  user:{
-    fontSize:24,
-    color: 'white',
-    fontWeight:'bold',
-    marginBottom: 25,
-    paddingTop:Dimensions.get('window').height * 0.5,
-  },
-  sectionTitle:{
-    fontSize:14,
-    color:'white',
-    fontWeight:'bold',
-    marginBottom: 10
-  }
-});
 
 const mapStateToProps = (state) => ({
   isLoggedIn: state.FBlogin.isLoggedIn,

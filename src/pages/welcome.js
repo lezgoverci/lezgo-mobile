@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Text, ActivityIndicator, Image} from 'react-native';
+import {View, Text, ActivityIndicator, Image} from 'react-native';
 import {connect} from 'react-redux';
 import Button from '../components/button';
 import {saveData} from '../actions';
+import Theme from '../theme/style';
 
 const FBSDK = require('react-native-fbsdk');
 const {
@@ -39,7 +40,7 @@ class Welcome extends Component{
   }
 
   render(){
-    return(<View style={styles.container}>
+    return(<View style={Theme.welcomePage}>
       <Image style={{backgroundColor:'white', width:100, height:100, borderRadius:50, marginBottom:50}} source={{uri:this.props.fbUserData == null ? null : this.props.fbUserData.picture.data.url}} />
       <Button navigation={this.props.navigation} btnColor="#4267b2" text={this.props.fbUserData == null ? "Login with Facebook" : "Continue as " + this.props.fbUserData.first_name }/>
       <ActivityIndicator size="large" color="black" animating={this.props.isLoggingIn}/>
@@ -57,15 +58,6 @@ class Welcome extends Component{
   
   
 }
-
-const styles = StyleSheet.create({
-  container :{
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor:'#14D1D9'
-  }
-});
 
 const mapStateToProps = (state) => ({
   isLoggedIn : state.FBlogin.isLoggedIn,
