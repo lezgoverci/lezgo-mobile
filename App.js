@@ -3,13 +3,19 @@ import {createSwitchNavigator, createStackNavigator,createDrawerNavigator, creat
 import WelcomeScreen from './src/pages/welcome';
 import FeedScreen from './src/pages/home';
 import InboxScreen from './src/pages/inbox';
+import ItineraryCreateScreen from './src/pages/itinerary/create';
 
 import { Provider } from 'react-redux';
 import store from './src/store';
 
+const ItineraryStackNavigator = createStackNavigator({
+  CreateItinerary : ItineraryCreateScreen
+});
+
 const AuthDrawerNavigator = createDrawerNavigator({
   Feed: FeedScreen,
-  Inbox: InboxScreen
+  Inbox: InboxScreen,
+  Itinerary: ItineraryStackNavigator
 },{
   drawerPosition: 'right',
   drawerType:'slide'

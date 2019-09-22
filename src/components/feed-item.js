@@ -10,7 +10,7 @@ class FeedItem extends Component {
   render() {
     return (
       <View style={Theme.card}>
-        <Text style={Theme.heading3}>{this.props.data.title}</Text>
+        <Text style={[Theme.heading3, Theme.textBold]}>{this.props.data.title}</Text>
         <Text style={Theme.text}>{this.props.data.groupName}</Text>
         <Text style={Theme.text}>{this.props.data.date}</Text>
         <Text style={Theme.text}>{this.props.data.duration}</Text>

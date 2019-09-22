@@ -36,8 +36,8 @@ class Home extends Component {
         <View style={Theme.container}>
           <ScrollView
            style={Theme.scrollView}>
-            <View><Text style={Theme.heading1}>John Doe</Text></View>
-            <View><Text style={Theme.heading2}>Upcoming Trips</Text></View>
+            <View><Text style={[Theme.heading1, Theme.textBold]}>John Doe</Text></View>
+            <View><Text style={[Theme.heading2, Theme.textBold]}>Upcoming Trips</Text></View>
             <FlatList
               data={[
                 { id: 1, 

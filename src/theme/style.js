@@ -11,6 +11,12 @@ const Styles = StyleSheet.create({
     width: Constants.width.fullWidth
 
   },
+  row:{
+    width: Constants.width.fullWidth,
+  },
+  noPadding:{
+    padding: Constants.padding.none
+  },
   welcomePage:{
     flex: Constants.flex.full,
     alignItems: Constants.align.center,
@@ -78,26 +84,21 @@ const Styles = StyleSheet.create({
     fontWeight: Constants.fontWeight.normal
   },
   textBold:{
-    fontSize: Constants.fontSize.lg,
-    color: Constants.textColor.default,
     fontWeight: Constants.fontWeight.bold
   },
   heading1:{
     fontSize: Constants.fontSize.heading1,
     color: Constants.textColor.heading,
-    fontWeight: Constants.fontWeight.bold,
     paddingBottom: Constants.padding.sm
   },
   heading2:{
     fontSize: Constants.fontSize.heading2,
     color: Constants.textColor.heading,
-    fontWeight: Constants.fontWeight.bold,
     paddingBottom: Constants.padding.sm
   },
   heading3:{
     fontSize: Constants.fontSize.heading3,
     color: Constants.textColor.heading,
-    fontWeight: Constants.fontWeight.bold,
     paddingBottom: Constants.padding.sm
   },
   scrollView:{
@@ -119,6 +120,14 @@ const Styles = StyleSheet.create({
     fontSize: Constants.icon.size, 
     color: Constants.icon.colorInverted, 
     paddingRight: Constants.padding.sm
+  },
+  textButton:{
+    color: Constants.colors.primary
+  },
+  textInput:{
+    borderBottomWidth: 1,
+    marginVertical: 20,
+    borderBottomColor: Constants.colors.tertiary
   }
 })
 

@@ -34,6 +34,7 @@ export default Constants = {
     background: '#fff',
     primary: '#14D1D9',
     secondary: '#fff',
+    tertiary: '#EEE'
   },
   shadow:{
     color:'#000',
@@ -76,7 +77,8 @@ export default Constants = {
    sm: 10,
    md: 30,
    lg: 50,
-   xl: 70
+   xl: 70,
+   none: 0
   },
   margin:{
     top: 10,
