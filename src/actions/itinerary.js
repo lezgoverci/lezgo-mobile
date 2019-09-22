@@ -1,4 +1,4 @@
-import {ITINERARY} from '../constants/itinerary-action-types';
+import {ITINERARY} from '../action-types/itinerary';
 
 export function create(payload){
   return {type: ITINERARY.CREATE, payload:payload}

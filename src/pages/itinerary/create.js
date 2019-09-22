@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { type, toggleCalendar, addDay, addActivity, removeActivity, removeDay } from '../../actions/itinerary';
 import { connect } from 'react-redux';
 import Theme from '../../theme/style';
+import Calendar from '../../components/calendar';
 
 class CreateItinerary extends Component {
 
@@ -22,6 +23,9 @@ class CreateItinerary extends Component {
   render() {
     return (
       <View style={Theme.container}>
+        <View style={Theme.row}>
+          <Calendar />
+        </View>
         <View style={Theme.row}>
           <TextInput onChangeText={(value) =>{this.props.type({field:'itinerary-title',value: value})}} style={[Theme.heading1, Theme.noPadding, Theme.textBold, Theme.textInput]} placeholder="Name your itinerary"></TextInput>
         </View>

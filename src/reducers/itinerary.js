@@ -1,4 +1,4 @@
-import {ITINERARY} from '../constants/itinerary-action-types';
+import {ITINERARY} from '../action-types/itinerary';
 const initialState = {
   itinerary: {
     calendar: 'week',

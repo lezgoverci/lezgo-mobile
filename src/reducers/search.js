@@ -1,4 +1,4 @@
-import {SEARCH} from '../constants/action-types';
+import {SEARCH} from '../action-types/action-types';
 const initialState = {
   isFocused: false,
 };
