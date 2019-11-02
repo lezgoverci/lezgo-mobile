@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { TouchableOpacity, Dimensions, View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {connect} from 'react-redux';
-import {login, logout, logging} from '../actions';
-import Theme from '../theme/style';
+import {login, logout, logging} from './actions';
+import Theme from '../../theme/style';
 
 const FBSDK = require('react-native-fbsdk');
 const {

@@ -1,4 +1,4 @@
-import {FBLOGIN} from '../action-types/action-types';
+import FBLOGIN from './actionTypes';
 const initialState = {
   isLoggedIn: false,
   isLoggingIn: false,

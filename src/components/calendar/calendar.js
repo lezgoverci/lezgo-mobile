@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, Dimensions } from 'react-native';
-import { select, swipe, toggle } from '../actions/calendar';
+import { select, swipe, toggle } from './actions';
 import { connect } from 'react-redux';
 
 class Calendar extends Component {

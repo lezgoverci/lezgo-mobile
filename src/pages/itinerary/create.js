@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import { type, toggleCalendar, addDay, addActivity, removeActivity, removeDay } from '../../actions/itinerary';
+import { type, toggleCalendar, addDay, addActivity, removeActivity, removeDay } from '../../components/itinerary/actions';
 import { connect } from 'react-redux';
 import Theme from '../../theme/style';
-import Calendar from '../../components/calendar';
+import Calendar from '../../components/calendar/calendar';
 
 class CreateItinerary extends Component {
 

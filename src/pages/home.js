@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Button, ScrollView, FlatList, ImageBackground, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
-import { logout } from '../actions';
+import { logout } from '../components/facebook-auth/actions';
 import FeedItem from '../components/feed-item';
 import SearchBar from '../components/search-bar';
 import Theme from '../theme/style';

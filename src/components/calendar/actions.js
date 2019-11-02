@@ -1,4 +1,4 @@
-import {CALENDAR} from '../action-types/calendar';
+import {CALENDAR} from './calendar';
 
 
 export function toggle(payload) {

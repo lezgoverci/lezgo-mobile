@@ -1,0 +1,9 @@
+
+const FBLOGIN = {
+  LOGIN : 'LOGIN',
+  LOGOUT: 'LOGOUT',
+  LOGGING: 'LOGGING',
+  SAVEDATA: 'SAVEDATA'
+}
+
+export default FBLOGIN;

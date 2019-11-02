@@ -1,5 +1,7 @@
-export const CALENDAR = {
+ const CALENDAR = {
   TOGGLE: 'CALENDAR_TOGGLE',
   SELECT: 'CALENDAR_SELECT',
   SWIPE: 'CALENDAR_SWIPE'
 }
+
+export default CALENDAR;

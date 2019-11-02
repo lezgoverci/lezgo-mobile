@@ -1,4 +1,4 @@
-import {CALENDAR} from '../action-types/calendar';
+import CALENDAR from './actionTypes';
 
 const initialState = {
   calendar:{

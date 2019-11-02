@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import Theme from '../theme/style';
+import Theme from '../../theme/style';
 
 class FeedItem extends Component {
   constructor(props) {

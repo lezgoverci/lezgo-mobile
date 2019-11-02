@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {View, Text, ActivityIndicator, Image} from 'react-native';
 import {connect} from 'react-redux';
-import Button from '../components/button';
-import {saveData} from '../actions';
+import Button from '../components/facebook-auth/button';
+import {saveData} from '../components/facebook-auth/actions';
 import Theme from '../theme/style';
 
 const FBSDK = require('react-native-fbsdk');

@@ -6,7 +6,7 @@ import InboxScreen from './src/pages/inbox';
 import ItineraryCreateScreen from './src/pages/itinerary/create';
 
 import { Provider } from 'react-redux';
-import store from './src/store';
+import store from './src/redux/store';
 
 const ItineraryStackNavigator = createStackNavigator({
   CreateItinerary : ItineraryCreateScreen

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity, TextInput } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
-import { focusSearch, blurSearch } from '../actions';
+import { focusSearch, blurSearch } from './actions';
 import { connect } from 'react-redux';
-import Theme from '../theme/style';
+import Theme from '../../theme/style';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -67,7 +67,7 @@ class SearchBar extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  isFocused: state.Search.isFocused,
+  isFocused: state.SearchBar.isFocused,
 });
 
 const mapDispatchToProps = {
